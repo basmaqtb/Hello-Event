@@ -4,10 +4,13 @@ package com.hello.Controller;
 import com.hello.DTO.AuthenticationRequest;
 import com.hello.DTO.AuthenticationResponse;
 import com.hello.DTO.RegisterRequest;
+import com.hello.Model.User;
 import com.hello.Service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/auth")
@@ -37,4 +40,10 @@ public class AuthenticationController {
         return ResponseEntity.ok(authService.authenticate(request));
 
     }
+
+    @GetMapping("/affiche")
+    public List<User> getAllComptes() {
+        return authService.getAllUser();
+    }
+
 }

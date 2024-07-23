@@ -4,6 +4,7 @@ package com.hello.Service;
 import com.hello.DTO.AuthenticationRequest;
 import com.hello.DTO.AuthenticationResponse;
 import com.hello.DTO.RegisterRequest;
+import com.hello.DTO.UserDTO;
 import com.hello.Model.Role;
 import com.hello.Model.User;
 import com.hello.Repository.userRepository;
@@ -12,6 +13,8 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -68,5 +71,9 @@ public class AuthenticationService {
         return AuthenticationResponse.builder()
                 .token(jwtToken)
                 .build();
+    }
+
+    public List<User> getAllUser(){
+        return userdao.findAll();
     }
 }
