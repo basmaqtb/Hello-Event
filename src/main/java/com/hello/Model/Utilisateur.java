@@ -1,5 +1,6 @@
 package com.hello.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,19 +11,26 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class User  implements UserDetails {
+public class Utilisateur implements UserDetails {
     @Id
     @GeneratedValue
-    private  int id;
+    private  int id_user;
     private String name;
     private  String email;
     private  String password;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "utilisateur")
+    private Set<Contact> contact;
+
+
 
     @Enumerated(EnumType.STRING)
     private Role role;
