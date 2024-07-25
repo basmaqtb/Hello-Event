@@ -13,8 +13,13 @@ public class ContactService implements IContactService {
    private ContactDao contactDao;
    @Autowired
    private UserRepository userDao;
-    @Override
+
     public Contact addContact(Contact contact) {
+        return null;
+    }
+
+    @Override
+    public Contact addContact(Contact contact, int idUser) {
         return null;
     }
 
@@ -24,14 +29,12 @@ public class ContactService implements IContactService {
     }
 
     @Override
-    public Contact getContactById(Long id) {
+    public Contact updateContact(Contact contact) {
         return null;
     }
 
-    @Override
-    public Contact updateCompte(Contact contact) {
-        return null;
-    }
+
+
 
     @Override
     public void deleteContact(Long id) {
