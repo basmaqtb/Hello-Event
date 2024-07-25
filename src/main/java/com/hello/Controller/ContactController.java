@@ -19,12 +19,8 @@ public class ContactController {
     }
     @PostMapping("")
     public Contact addContact(@RequestBody Contact contact) {
-        return contactService.addContact(contact);
-    }
-    @PutMapping("")
-    public Contact updateContact(@RequestBody Contact contact) {
 
-        return contactService.updateCompte(contact);
+        return contactService.addContact(contact);
     }
 
 }

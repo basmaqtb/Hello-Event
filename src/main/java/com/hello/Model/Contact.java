@@ -14,7 +14,5 @@ public class Contact {
     private String phone;
     private String date;
 
-    @ManyToOne
-    @JoinColumn(name = "id_user", nullable = false)
-    private Utilisateur utilisateur;
+
 }
