@@ -13,6 +13,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class AuthenticationService {
@@ -37,6 +39,21 @@ public class AuthenticationService {
                 .token(jwtToken)
                 .build();
     }
+    public AuthenticationResponse registerAdmin(RegisterRequest request) {
+
+        var user = Utilisateur.builder()
+                .name(request.getName())
+                .email(request.getEmail())
+                .password(passwordEncoder.encode(request.getPassword()))
+                .role(Role.ADMIN)
+                .build();
+        userdao.save(user);
+
+        var jwtToken = jwtService.generateToken(user);
+        return AuthenticationResponse.builder()
+                .token(jwtToken)
+                .build();
+    }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
 
@@ -53,5 +70,13 @@ public class AuthenticationService {
         return AuthenticationResponse.builder()
                 .token(jwtToken)
                 .build();
+    }
+
+    public List<Utilisateur> getAllUser(){
+        return userdao.findAll();
+    }
+
+    public void deleteCompte(int id_user) {
+        userdao.deleteById(id_user);
     }
 }
