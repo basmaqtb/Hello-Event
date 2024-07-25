@@ -6,11 +6,13 @@ import java.util.List;
 
 public interface IContactService {
 
-    Contact addContact(Contact contact, int idUser);
+    Contact addContact(Contact contact);
 
     List<Contact> getAllContacts();
     Contact updateContact(Contact contact);
-    void deleteContact(Long id);
+
+    void deleteContact(int id);
+
 
 
 }
