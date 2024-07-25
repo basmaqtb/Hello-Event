@@ -4,7 +4,7 @@ package com.hello.Controller;
 import com.hello.DTO.AuthenticationRequest;
 import com.hello.DTO.AuthenticationResponse;
 import com.hello.DTO.RegisterRequest;
-import com.hello.Model.User;
+import com.hello.Model.Utilisateur;
 import com.hello.Service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/auth")
-@CrossOrigin(origins = "http://localhost:4200/")
 @RequiredArgsConstructor
 public class AuthenticationController {
 
@@ -42,8 +41,12 @@ public class AuthenticationController {
     }
 
     @GetMapping("/affiche")
-    public List<User> getAllComptes() {
+    public List<Utilisateur> getAllUser() {
         return authService.getAllUser();
     }
 
+    @DeleteMapping("/{id_user}")
+    public void deleteCompte(@PathVariable int id_user) {
+        authService.deleteCompte(id_user);
+    }
 }

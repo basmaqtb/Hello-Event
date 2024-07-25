@@ -4,9 +4,8 @@ package com.hello.Service;
 import com.hello.DTO.AuthenticationRequest;
 import com.hello.DTO.AuthenticationResponse;
 import com.hello.DTO.RegisterRequest;
-import com.hello.DTO.UserDTO;
 import com.hello.Model.Role;
-import com.hello.Model.User;
+import com.hello.Model.Utilisateur;
 import com.hello.Repository.userRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -27,7 +26,7 @@ public class AuthenticationService {
 
     public AuthenticationResponse register(RegisterRequest request) {
 
-        var user = User.builder()
+        var user = Utilisateur.builder()
                 .name(request.getName())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
@@ -42,7 +41,7 @@ public class AuthenticationService {
     }
     public AuthenticationResponse registerAdmin(RegisterRequest request) {
 
-        var user = User.builder()
+        var user = Utilisateur.builder()
                 .name(request.getName())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
@@ -73,7 +72,11 @@ public class AuthenticationService {
                 .build();
     }
 
-    public List<User> getAllUser(){
+    public List<Utilisateur> getAllUser(){
         return userdao.findAll();
+    }
+
+    public void deleteCompte(int id_user) {
+        userdao.deleteById(id_user);
     }
 }
