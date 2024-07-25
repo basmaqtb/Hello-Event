@@ -20,6 +20,7 @@ public class ContactController {
 
     @PostMapping("/add")
     public Contact addContact(@RequestBody Contact contact) {
+
         return contactService.addContact(contact);
     }
 
@@ -32,7 +33,6 @@ public class ContactController {
     public void deleteCompte(@PathVariable int id) {
         contactService.deleteContact(id);
     }
-
 
     }
 
