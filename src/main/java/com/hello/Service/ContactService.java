@@ -11,33 +11,25 @@ import java.util.List;
 public class ContactService implements IContactService {
    @Autowired
    private ContactDao contactDao;
-   @Autowired
-   private UserRepository userDao;
 
-    public Contact addContact(Contact contact) {
-        return null;
-    }
 
     @Override
-    public Contact addContact(Contact contact, int idUser) {
-        return null;
+    public Contact addContact(Contact contact) {
+        return contactDao.save(contact);
     }
 
     @Override
     public List<Contact> getAllContacts() {
-        return List.of();
+        return contactDao.findAll();
     }
 
     @Override
     public Contact updateContact(Contact contact) {
         return null;
     }
-
-
-
-
     @Override
-    public void deleteContact(Long id) {
-
+    public void deleteContact(int id) {
+        contactDao.deleteById((long) id);
     }
+
 }

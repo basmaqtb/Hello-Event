@@ -4,9 +4,9 @@ package com.hello.Service;
 import com.hello.DTO.AuthenticationRequest;
 import com.hello.DTO.AuthenticationResponse;
 import com.hello.DTO.RegisterRequest;
+import com.hello.Dao.UserRepository;
 import com.hello.Model.Role;
 import com.hello.Model.Utilisateur;
-import com.hello.Repository.userRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -19,7 +19,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AuthenticationService {
 
-    private final userRepository userdao;
+    private final UserRepository userdao;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;

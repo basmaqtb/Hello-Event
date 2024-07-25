@@ -33,9 +33,6 @@ public class Utilisateur implements UserDetails {
     private  String password;
 
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "utilisateur")
-    private Set<Contact> contact;
 
     @Enumerated(EnumType.STRING)
     private Role role;
