@@ -26,9 +26,7 @@ import java.util.Set;
 @NoArgsConstructor
 public class Utilisateur implements UserDetails {
     @Id
-
-    @GeneratedValue
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int id_user;
     private String name;
     private  String email;
