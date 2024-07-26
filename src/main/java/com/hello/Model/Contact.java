@@ -8,11 +8,10 @@ import lombok.Data;
 public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id_contact;
     private String name;
     private String message;
     private String phone;
     private String date;
-
 
 }
