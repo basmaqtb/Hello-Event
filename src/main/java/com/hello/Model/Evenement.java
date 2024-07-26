@@ -1,19 +1,19 @@
 package com.hello.Model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Evenement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_event;
+    private Long id_event;
     private String nom_event;
     private String description;
     private String date_event;
