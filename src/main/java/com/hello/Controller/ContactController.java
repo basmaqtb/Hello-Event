@@ -20,19 +20,17 @@ public class ContactController {
 
     @PostMapping("/add")
     public Contact addContact(@RequestBody Contact contact) {
-
         return contactService.addContact(contact);
     }
 
-    @PutMapping("id")
-    public Contact updateContact(@RequestBody Contact contact) {
-
+    @PutMapping("/{id}")
+    public Contact updateContact(@PathVariable Long id, @RequestBody Contact contact) {
+        contact.setId_contact(id); // Utilisation de l'ID défini dans le modèle Contact
         return contactService.updateContact(contact);
     }
+
     @DeleteMapping("/{id}")
-    public void deleteCompte(@PathVariable int id) {
+    public void deleteContact(@PathVariable Long id) {
         contactService.deleteContact(id);
     }
-
-    }
-
+}
