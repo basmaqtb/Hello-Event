@@ -10,8 +10,7 @@ public interface IContactService {
 
     List<Contact> getAllContacts();
     Contact updateContact(Contact contact);
-
-    void deleteContact(int id);
+void deleteContact(Long id_contact);
 
 
 
