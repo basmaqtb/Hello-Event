@@ -37,6 +37,10 @@ public class Utilisateur implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @JsonIgnore
+    @OneToMany(mappedBy="utilisateur", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Reservation> reservations;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

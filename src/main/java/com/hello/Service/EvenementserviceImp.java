@@ -21,13 +21,4 @@ public class EvenementserviceImp implements  EvenementService{
         return  evenementRepository.save(event);
     }
 
-    @Override
-    public List<Evenement> getAllEvent() {
-        return List.of();
-    }
-
-    @Override
-    public void deleteCompte(int id_event) {
-
-    }
 }

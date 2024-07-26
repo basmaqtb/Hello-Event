@@ -18,8 +18,6 @@ public class EventController {
     private EvenementService evenementService;
     @PostMapping("/CreateEvent")
     public Evenement creerCompte(@RequestBody Evenement evenement) {
-
-
         return evenementService.CreateEvent(evenement);
     }
 }
