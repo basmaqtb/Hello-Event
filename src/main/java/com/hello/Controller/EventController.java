@@ -2,6 +2,7 @@ package com.hello.Controller;
 
 import com.hello.Model.Contact;
 import com.hello.Model.Evenement;
+import com.hello.Service.AuthenticationService;
 import com.hello.Service.EvenementService;
 import com.hello.Service.EvenementserviceImp;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ public class EventController {
     @Autowired
     private EvenementService evenementService;
     @PostMapping("/CreateEvent")
+
     public Evenement creerEvent(@RequestBody Evenement evenement) {
         return evenementService.CreateEvent(evenement);
     }
@@ -35,6 +37,7 @@ public class EventController {
     public Evenement updateEvent(@PathVariable Long id_event, @RequestBody Evenement event) {
         event.setId_event(id_event);
         return evenementService.updateEvent(event);
+
     }
 }
 
