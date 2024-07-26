@@ -1,12 +1,12 @@
 package com.hello.Model;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Evenement {
@@ -17,6 +17,4 @@ public class Evenement {
     private String nom_event;
     private String description;
     private String date_event;
-
 }
-

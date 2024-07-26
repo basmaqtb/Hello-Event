@@ -36,5 +36,10 @@ public class EventController {
         event.setId_event(id_event);
         return evenementService.updateEvent(event);
     }
+
+    @GetMapping("/events/search")
+    public List<Evenement> searchEvents(@RequestParam(required = false) String date_event) {
+        return evenementService.searchEvents(date_event);
+    }
 }
 

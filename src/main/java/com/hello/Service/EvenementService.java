@@ -10,4 +10,5 @@ public interface EvenementService {
     List<Evenement> getAllEvent();
     void deleteEvent(Long id) ;
     public Evenement updateEvent(Evenement event);
+    public List<Evenement> searchEvents(String date_event);
 }

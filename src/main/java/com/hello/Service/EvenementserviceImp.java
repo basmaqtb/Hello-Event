@@ -47,4 +47,13 @@ public class EvenementserviceImp implements  EvenementService{
             throw new RuntimeException("Event not found with id: " + event.getId_event());
         }
     }
+
+    @Override
+    public List<Evenement> searchEvents(String date_event) {
+        if (date_event != null) {
+            return evenementRepository.findByDate_event(date_event);
+        }
+        return List.of(); // Return an empty list if date_event is null
+    }
+
 }
