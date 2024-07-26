@@ -24,6 +24,8 @@ public class EvenementserviceImp implements  EvenementService{
         return  evenementRepository.save(event);
     }
 
+<<<<<<< HEAD
+=======
     @Override
     public List<Evenement> getAllEvent() {
         return evenementRepository.findAll();
@@ -49,5 +51,6 @@ public class EvenementserviceImp implements  EvenementService{
         }
     }
 
+>>>>>>> 3a38a1957beaa01eec1ed0a88cddb979325fdcbb
 }
 
