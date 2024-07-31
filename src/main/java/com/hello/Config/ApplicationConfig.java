@@ -42,6 +42,7 @@ public class ApplicationConfig {
 
     @Bean
    public PasswordEncoder psswordEncoder() {
+
         return new BCryptPasswordEncoder();
     }
 }

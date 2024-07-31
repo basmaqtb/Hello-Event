@@ -32,11 +32,16 @@ public class EventController {
         evenementService.deleteEvent(id_event);
     }
 
-    @PutMapping("/event/update/{id_event}")
-    public Evenement updateEvent(@PathVariable Long id_event, @RequestBody Evenement event) {
-        event.setId_event(id_event);
+    @PutMapping("/event/update/{idEvent}")
+    public Evenement updateEvent(@PathVariable Long idEvent, @RequestBody Evenement event) {
+        event.setIdEvent(idEvent);
         return evenementService.updateEvent(event);
 
+    }
+
+    @GetMapping("/events/search")
+    public List<Evenement> searchEvents(@RequestParam String nomEvent) {
+        return evenementService.searchEvents(nomEvent);
     }
 }
 
