@@ -1,13 +1,9 @@
 package com.hello.Service;
 
 import com.hello.Dao.EvenementRepository;
-import com.hello.Dao.UserRepository;
-import com.hello.Model.Contact;
 import com.hello.Model.Evenement;
-import com.hello.Model.Utilisateur;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 import java.util.Optional;
@@ -24,8 +20,6 @@ public class EvenementserviceImp implements  EvenementService{
         return  evenementRepository.save(event);
     }
 
-<<<<<<< HEAD
-=======
     @Override
     public List<Evenement> getAllEvent() {
         return evenementRepository.findAll();
@@ -51,6 +45,7 @@ public class EvenementserviceImp implements  EvenementService{
         }
     }
 
->>>>>>> 3a38a1957beaa01eec1ed0a88cddb979325fdcbb
+
+
 }
 
