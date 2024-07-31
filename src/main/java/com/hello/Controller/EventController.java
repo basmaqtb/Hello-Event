@@ -2,6 +2,7 @@ package com.hello.Controller;
 
 import com.hello.Model.Contact;
 import com.hello.Model.Evenement;
+import com.hello.Service.AuthenticationService;
 import com.hello.Service.EvenementService;
 import com.hello.Service.EvenementserviceImp;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,7 @@ public class EventController {
     public Evenement updateEvent(@PathVariable Long idEvent, @RequestBody Evenement event) {
         event.setIdEvent(idEvent);
         return evenementService.updateEvent(event);
+
     }
 
     @GetMapping("/events/search")

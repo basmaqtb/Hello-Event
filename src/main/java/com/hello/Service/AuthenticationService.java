@@ -79,4 +79,8 @@ public class AuthenticationService {
     public void deleteCompte(int id_user) {
         userdao.deleteById(id_user);
     }
+
+    public Long count(){
+        return userdao.count();
+    }
 }

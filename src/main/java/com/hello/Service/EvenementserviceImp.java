@@ -1,10 +1,7 @@
 package com.hello.Service;
 
 import com.hello.Dao.EvenementRepository;
-import com.hello.Dao.UserRepository;
-import com.hello.Model.Contact;
 import com.hello.Model.Evenement;
-import com.hello.Model.Utilisateur;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -57,3 +54,4 @@ public class EvenementserviceImp implements  EvenementService{
     }
 
 }
+

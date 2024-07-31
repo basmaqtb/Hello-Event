@@ -49,4 +49,6 @@ public class AuthenticationController {
     public void deleteCompte(@PathVariable int id_user) {
         authService.deleteCompte(id_user);
     }
+
+
 }
