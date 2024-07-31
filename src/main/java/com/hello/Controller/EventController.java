@@ -18,12 +18,7 @@ public class EventController {
     @Autowired
     private EvenementService evenementService;
     @PostMapping("/CreateEvent")
-<<<<<<< HEAD
-    public Evenement creerCompte(@RequestBody Evenement evenement) {
-=======
-
     public Evenement creerEvent(@RequestBody Evenement evenement) {
->>>>>>> 3a38a1957beaa01eec1ed0a88cddb979325fdcbb
         return evenementService.CreateEvent(evenement);
     }
 

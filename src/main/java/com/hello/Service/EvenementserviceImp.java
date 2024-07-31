@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class EvenementserviceImp implements  EvenementService{
+public class EvenementserviceImp implements  EvenementService {
 
     @Autowired
     private EvenementRepository evenementRepository;
@@ -21,11 +21,9 @@ public class EvenementserviceImp implements  EvenementService{
 
     @Override
     public Evenement CreateEvent(Evenement event) {
-        return  evenementRepository.save(event);
+        return evenementRepository.save(event);
     }
 
-<<<<<<< HEAD
-=======
     @Override
     public List<Evenement> getAllEvent() {
         return evenementRepository.findAll();
@@ -51,6 +49,5 @@ public class EvenementserviceImp implements  EvenementService{
         }
     }
 
->>>>>>> 3a38a1957beaa01eec1ed0a88cddb979325fdcbb
 }
 
