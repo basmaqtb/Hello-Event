@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface EvenementRepository extends JpaRepository<Evenement, Long> {
-    List<Evenement> findByDate_event(String dateEvent);
+   List<Evenement> findByNomEvent(String nomEvent);
 }

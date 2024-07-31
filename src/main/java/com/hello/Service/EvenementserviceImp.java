@@ -35,23 +35,23 @@ public class EvenementserviceImp implements  EvenementService{
 
     @Override
     public Evenement updateEvent(Evenement event) {
-        Optional<Evenement> existingEventOpt = evenementRepository.findById(event.getId_event());
+        Optional<Evenement> existingEventOpt = evenementRepository.findById(event.getIdEvent());
 
         if (existingEventOpt.isPresent()) {
             Evenement existingEvent = existingEventOpt.get();
-            existingEvent.setNom_event(event.getNom_event());
+            existingEvent.setNomEvent(event.getNomEvent());
             existingEvent.setDescription(event.getDescription());
-            existingEvent.setDate_event(event.getDate_event());
+            existingEvent.setDateEvent(event.getDateEvent());
             return evenementRepository.save(existingEvent);
         } else {
-            throw new RuntimeException("Event not found with id: " + event.getId_event());
+            throw new RuntimeException("Event not found with id: " + event.getIdEvent());
         }
     }
 
     @Override
-    public List<Evenement> searchEvents(String date_event) {
-        if (date_event != null) {
-            return evenementRepository.findByDate_event(date_event);
+    public List<Evenement> searchEvents(String nomEvent) {
+       if (nomEvent != null) {
+        return evenementRepository.findByNomEvent(nomEvent);
         }
         return List.of(); // Return an empty list if date_event is null
     }

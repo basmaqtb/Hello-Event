@@ -13,8 +13,8 @@ public class Evenement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_event;
-    private String nom_event;
+    private Long idEvent;
+    private String nomEvent;
     private String description;
-    private String date_event;
+    private String dateEvent;
 }
