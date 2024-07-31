@@ -8,11 +8,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './Components/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './Components/login/login.component';
+import { DashbordComponent } from './Components/dashbord/dashbord.component';
 @NgModule({
   declarations: [
     AppComponent,
     InscriptionComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent,
+    DashbordComponent
   ],
   imports: [
     BrowserModule,
