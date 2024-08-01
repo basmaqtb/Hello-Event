@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InscriptionComponent } from './Components/inscription/inscription.component';
+import { GestioncontactComponent } from './Components/gestioncontact/gestioncontact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    GestioncontactComponent
   ],
   imports: [
     BrowserModule,
