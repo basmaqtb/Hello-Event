@@ -10,13 +10,15 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './Components/login/login.component';
 import { DashbordComponent } from './Components/dashbord/dashbord.component';
+import { AllUserComponent } from './Components/all-user/all-user.component';
 @NgModule({
   declarations: [
     AppComponent,
     InscriptionComponent,
     RegisterComponent,
     LoginComponent,
-    DashbordComponent
+    DashbordComponent,
+    AllUserComponent
   ],
   imports: [
     BrowserModule,
