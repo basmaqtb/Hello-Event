@@ -1,22 +1,29 @@
-<div *ngIf="users !== undefined" class="user-list-container">
+<div *ngIf="users !== undefined && users.length > 0" class="user-list-container">
     <h2>Users List</h2>
     <table class="table">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Password</th>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Password</th>
+          <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let user of users">
-          <td>{{ user.id_user }}</td>
-          <td>{{ user.name }}</td>
-          <td>{{ user.email }}</td>
-          <td>{{ user.password }}</td>
+          <td data-label="ID">{{ user.id_user }}</td>
+          <td data-label="Name">{{ user.name }}</td>
+          <td data-label="Email">{{ user.email }}</td>
+          <td data-label="Password">{{ user.password }}</td>
+          <td>
+            <button (click)="deleteUser(user.id_user)">Delete</button>
+          </td>
         </tr>
       </tbody>
     </table>
+  </div>
+  <div *ngIf="users === undefined || users.length === 0" class="no-users-container">
+    <p>No users available.</p>
   </div>
   

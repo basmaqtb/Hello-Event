@@ -9,7 +9,7 @@ import { JwtService } from 'src/app/Service/jwt.service';
 })
 export class AllUserComponent {
 
-  users: Utilisateur[] | undefined;
+  users!: Utilisateur[] ;
 
   constructor(
     private service: JwtService
@@ -26,6 +26,18 @@ export class AllUserComponent {
       },
       (error) => {
         console.error('Error fetching users', error);
+      }
+    );
+  }
+
+  deleteUser(id_user: number): void {
+    this.service.deleteUser(id_user).subscribe(
+      () => {
+        this.users = this.users.filter(user => user.id_user !== id_user);
+        console.log('User deleted successfully');
+      },
+      (error) => {
+        console.error('Error deleting user', error);
       }
     );
   }

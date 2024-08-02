@@ -48,5 +48,8 @@ export class JwtService {
   }
 
  
-
+  deleteUser(id_user: number): Observable<void> {
+    const headers = this.createAuthorizationHeader();
+    return this.http.delete<void>(url + `Admin/${id_user}`, { headers });
+  }
 }
