@@ -21,7 +21,6 @@ ngOnInit(): void {
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required]],
     confirmPassword: ['', [Validators.required]],
-    role: ['', Validators.required]
   }, {validator: this.passwordMathValidator})
 }
 
@@ -39,24 +38,12 @@ passwordMathValidator(formGroup: FormGroup){
 }
 
 submitForm() {
-  if (this.registerForm.valid) {
-    console.log(this.registerForm.value);
-    const role = this.registerForm.get('role')?.value;
-    if (role === 'ADMIN') {
-      this.service.registerAdmin(this.registerForm.value).subscribe(
-        (response) => {
-          console.log(response);
-        }
-      );
-    } else {
-      this.service.register(this.registerForm.value).subscribe(
-        (response) => {
-          console.log(response);
-    
-        }
-      );
-    }
-  }
+  console.log(this.registerForm.value);
+  this.service.register(this.registerForm.value).subscribe(
+    (response) => {
+        console.log(response)
+      }
+  )
 }
   
 }
