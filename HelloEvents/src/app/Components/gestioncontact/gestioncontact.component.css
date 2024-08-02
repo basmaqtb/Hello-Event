@@ -1,0 +1,12 @@
+.form-group {
+    margin-bottom: 15px;
+  }
+  
+  input.ng-invalid.ng-touched {
+    border-color: red;
+  }
+  
+  input.ng-valid.ng-touched {
+    border-color: green;
+  }
+  
